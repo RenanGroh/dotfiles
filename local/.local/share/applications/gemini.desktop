@@ -1,0 +1,12 @@
+[Desktop Entry]
+Version=1.0
+Name=Gemini
+GenericName=AI Assistant
+Comment=Google Gemini Standalone App
+# O comando abaixo cria o app isolado usando o Chromium
+Exec=/usr/bin/chromium --app=https://gemini.google.com --class=GeminiApp --user-data-dir=/home/renxn/.config/chromium-gemini
+Icon=/home/renxn/.local/share/icons/gemini/gemini.png
+Terminal=false
+Type=Application
+Categories=Network;Science;
+StartupWMClass=GeminiApp

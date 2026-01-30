@@ -1,0 +1,11 @@
+[Desktop Entry]
+Name=Neovim (LazyVim)
+GenericName=Text Editor
+Comment=Edit text files
+# O TRUQUE: Chama o kitty direto e manda ele rodar o nvim
+Exec=kitty -e nvim %F
+Icon=nvim
+Terminal=false
+Type=Application
+Categories=Utility;TextEditor;Development;
+StartupNotify=false
