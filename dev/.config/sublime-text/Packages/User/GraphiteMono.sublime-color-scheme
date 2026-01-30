@@ -1,0 +1,52 @@
+{
+    "name": "Graphite Mono",
+    "globals": {
+        // --- BASE (Igual ao Kitty/Waybar) ---
+        "background": "#1a1a1a",
+        "foreground": "#e6e6e6",
+        "caret": "#e6e6e6",
+        "selection": "#404040",
+        "selection_border": "#1a1a1a",
+        "line_highlight": "#252525",
+        
+        // --- UI ELEMENTS ---
+        "guide": "#303030",
+        "active_guide": "#505050",
+        "stack_guide": "#303030"
+    },
+    "rules": [
+        // --- SINTAXE PASTEL INDUSTRIAL ---
+        // Comentários (Cinza Escuro)
+        {
+            "name": "Comment",
+            "scope": "comment",
+            "foreground": "#505050",
+            "font_style": "italic"
+        },
+        // Strings (Verde Pastel ou Branco)
+        {
+            "name": "String",
+            "scope": "string",
+            "foreground": "#a6d189"
+        },
+        // Números/Constantes (Roxo Pastel)
+        {
+            "name": "Constant",
+            "scope": "constant.numeric, constant.language, support.constant",
+            "foreground": "#cba6f7"
+        },
+        // Keywords (if, else, function) - Cinza Claro/Branco (Monocromático)
+        {
+            "name": "Keyword",
+            "scope": "keyword, storage",
+            "foreground": "#dadada",
+            "font_style": "bold"
+        },
+        // Funções (Azul Pastel)
+        {
+            "name": "Function",
+            "scope": "entity.name.function, support.function",
+            "foreground": "#8caaee"
+        }
+    ]
+}

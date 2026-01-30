@@ -1,0 +1,62 @@
+# --- Configurações Globais (Sempre no Topo) ---
+add_newline = false
+scan_timeout = 1000
+
+# Layout: Define a ordem exata das coisas
+# Estamos colocando: Usuário > Hostname > Pasta > Git > Linguagens > Seta
+format = """
+$username\
+$hostname\
+$directory\
+$git_branch\
+$git_status\
+$golang\
+$nodejs\
+$java\
+$character"""
+
+# --- Módulos ---
+
+[username]
+style_user = "bold #faf8f6"   # Amarelo Pastel
+style_root = "bold #f38ba8"   # Vermelho se for root
+show_always = true            # Mostra sempre
+format = "[$user]($style) "   # Formato: "renxn "
+
+[hostname]
+ssh_only = true               # Só mostra o nome do PC se for SSH
+style = "bold #94e2d5"
+format = "@[$hostname]($style) "
+
+[directory]
+style = "bold white"        # Azul Pastel
+truncate_to_repo = false
+truncation_length = 3
+truncation_symbol = "…/"
+format = "[$path]($style) "   # Formato: "~ "
+
+[git_branch]
+symbol = " "
+style = "bold #cba6f7"        # Roxo/Lavanda
+format = "[$symbol$branch]($style) "
+
+[git_status]
+style = "bold #f38ba8"        # Vermelho suave
+
+# --- Linguagens (Ícones apenas quando necessário) ---
+[golang]
+symbol = " "
+style = "bold #74c7ec"
+
+[nodejs]
+symbol = " "
+style = "bold #a6e3a1"
+
+[java]
+symbol = " "
+style = "bold #fab387"
+
+# --- O Prompt (A Seta) ---
+[character]
+success_symbol = "[➜](bold #a6e3a1)"  # Verde Pastel
+error_symbol = "[✗](bold #f38ba8)"    # Vermelho Pastel

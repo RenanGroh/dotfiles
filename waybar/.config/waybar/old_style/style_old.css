@@ -1,0 +1,116 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font";
+    font-weight: bold;
+    font-size: 14px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: #cdd6f4;
+}
+
+tooltip {
+    background: #1e1e2e;
+    border-radius: 10px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: #11111b;
+}
+
+/* --- Workspaces (Centro) --- */
+#workspaces {
+    background: #1e1e2e;
+    margin: 6px 3px;
+    padding: 0 5px;
+    border-radius: 15px;
+    opacity: 0.8;
+}
+
+#workspaces button {
+    padding: 5px;
+    color: #313244;
+    margin-right: 5px;
+}
+
+#workspaces button.active {
+    color: #cba6f7;
+    border-radius: 10px;
+}
+
+#workspaces button:hover {
+    background: #11111b;
+    color: #cba6f7;
+    border-radius: 10px;
+}
+
+#custom-updates {
+    color: #f9e2af; /* Amarelo/Laranja suave */
+    background: #1e1e2e;
+    padding: 0 12px;
+    border-radius: 15px;
+    margin: 6px 3px;
+    opacity: 0.8;
+}
+
+/* --- Módulos Gerais (Pills) --- */
+#clock,
+#battery,
+#cpu,
+#memory,
+#network,
+#pulseaudio,
+#tray,
+#mpris,
+#custom-power {
+    padding: 0 12px;
+    color: #cdd6f4;
+    border-radius: 15px;
+    background: #1e1e2e;
+    opacity: 0.8;
+    margin: 6px 3px;
+}
+
+/* --- Cores Específicas --- */
+
+#clock {
+    color: #fab387; /* Peach */
+    margin-right: 0px; /* Grudado no Power se quiser, ou mantenha margem */
+}
+
+#custom-power {
+    color: #f38ba8; /* Red */
+    background: #1e1e2e;
+    padding-right: 15px; /* Um pouco mais de espaço no ícone */
+}
+
+#mpris {
+    color: #a6e3a1; /* Green (Spotify vibe) */
+}
+
+#mpris.paused {
+    color: #a6adc8; /* Cinza quando pausado */
+    font-style: italic;
+}
+
+#pulseaudio {
+    color: #89b4fa; /* Blue */
+}
+
+#network {
+    color: #f9e2af; /* Yellow */
+}
+
+#cpu {
+    color: #f38ba8; /* Red */
+}
+
+#memory {
+    color: #cba6f7; /* Mauve */
+}
+
+#tray {
+    background: #1e1e2e;
+}

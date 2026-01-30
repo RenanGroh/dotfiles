@@ -1,0 +1,24 @@
+
+    // Aumentar o tamanho físico da aba (Padding)
+    {
+        "class": "tab_control",
+        // [Esquerda, Topo, Direita, Baixo]
+        // Aumente o 2º e o 4º valor para deixar a aba mais alta
+        "content_margin": [15, 12, 15, 8]
+    },
+
+    // Aumentar o Texto da aba
+    {
+        "class": "tab_label",
+        // Força a mesma fonte do editor para consistência
+        "font.face": "JetBrainsMono Nerd Font", 
+        "font.size": 13,  // Tamanho do texto (Padrão é ~11)
+        "font.bold": true // Negrito para leitura rápida (opcional)
+    },
+
+    // (Opcional) Ajuste para quando a aba está ativa (Foco)
+    {
+        "class": "tab_label",
+        "parents": [{"class": "tab_control", "attributes": ["selected"]}],
+        "font.size": 14 // Deixa a aba ativa levemente maior
+    }

@@ -1,0 +1,150 @@
+/* --- CONFIGURAÇÃO GLOBAL (Reset) --- */
+* {
+    border: none;
+    border-radius: 1px; /* OBRIGATÓRIO: Garante o visual quadrado (Brutalismo) */
+    font-family: "JetBrainsMono Nerd Font", "Roboto Mono", monospace;
+    font-weight: bold;
+    font-size: 13px;
+    min-height: 0;
+}
+
+/* --- A BARRA PRINCIPAL --- */
+window#waybar {
+    /* Mudei de 0.85 para 0.5 (ou até 0.3 se quiser muito efeito vidro) */
+    background: rgba(10, 10, 10, 0.5); 
+    
+    /* Borda inferior sutil (mantive) */
+    border-bottom: 1px solid #303030;
+    
+    color: #e6e6e6;
+    transition-property: background-color;
+    transition-duration: .5s;
+}
+
+/* Tooltips (Janelas flutuantes ao passar o mouse) */
+tooltip {
+    background: #1a1a1a;
+    border: 1px solid #404040;
+    border-radius: 0px; /* Quadrado */
+}
+tooltip label {
+    color: #e6e6e6;
+}
+
+/* --- WORKSPACES (Área de Trabalho) --- */
+#workspaces {
+    background: #1a1a1a; /* Fundo Cinza Escuro */
+    margin: 4px 4px;
+    padding: 0px 2px;
+    border: 1px solid #303030; /* Borda sutil */
+}
+
+#workspaces button {
+    padding: 2 8px;
+    background: transparent;
+    color: #707070; /* Cinza para inativos */
+    border-radius: 0px;
+}
+
+/* Workspace Ativo (Onde você está) */
+#workspaces button.active {
+    background: #303030; /* Destaque sutil no fundo */
+    color: #ffffff;      /* Branco puro */
+    border-top: 0.5px solid #ffffff; /* Linha indicadora no topo */
+}
+
+#workspaces button:hover {
+    background: #252525;
+    color: #e6e6e6;
+}
+
+/* Indicador de Urgência (Alguém te chamando) */
+#workspaces button.urgent {
+    background: #b53838; /* Um vermelho fosco, única cor de alerta */
+    color: #ffffff;
+}
+
+/* --- MÓDULOS (Blocos) --- */
+/* Estilo comum para todos os blocos da direita/esquerda */
+#clock,
+#battery,
+#cpu,
+#memory,
+#custom-gpu,       
+#network,
+#pulseaudio,
+#tray,
+#mpris,
+#custom-updates,
+#custom-cava,
+#custom-power {
+    background: #1a1a1a; /* Cinza Escuro (Fundo dos módulos) */
+    color: #e6e6e6;      /* Branco Pastel (Texto) */
+    
+    /* Margem: Cria o espaçamento entre os blocos quadrados */
+    margin: 4px 2px;     
+    padding: 0 10px;
+    
+    /* Borda sutil para definição (opcional, remove se quiser 'flat' total) */
+    border: 1px solid #252525; 
+}
+
+/* --- Ajustes Específicos por Módulo --- */
+
+/* Relógio Central */
+#clock {
+    background: transparent; /* Relógio flutuante no meio */
+    border: none;
+    font-size: 14px;
+}
+
+/* Botão Power (Destaque sutil) */
+#custom-power {
+    background: #e6e6e6; /* Invertido: Fundo Branco */
+    color: #101010;      /* Texto Preto */
+    margin-right: 6px;   /* Espaço da borda da tela */
+}
+
+#custom-power:hover {
+    background: #ffffff;
+}
+
+/* Ícones de Tray */
+#tray {
+    padding-right: 8px;
+    padding-left: 8px;
+}
+#tray > .passive {
+    -gtk-icon-effect: dim; /* Deixa ícones inativos mais escuros */
+}
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#custom-cava {
+    background: #1a1a1a;
+    color: #e6e6e6;      /* Roxo suave (ou use #e6e6e6 para branco) */
+    font-family: "JetBrainsMono Nerd Font";
+    padding-right: 5px; /* Espaço entre as barras e o nome da música */
+    margin-right: 5px;     /* Grudado no player */
+    font-weight: normal; /* Barras ficam melhores sem negrito */
+}
+
+/* Player de Música */
+#mpris {
+    color: #a6e3a1;
+    margin-left: 0px;
+    padding-left: 5px;
+}
+#mpris.paused {
+    color: #e6e6e6; /* Texto cinza quando pausado */
+    background: #151515;
+    font-style: normal;
+}
+
+/* Updates (Só aparece se tiver update, pode destacar um pouco) */
+#custom-updates {
+    /* Se quiser manter monocromático, deixe igual aos outros.
+       Se quiser um aviso sutil, descomente abaixo: */
+       border-bottom: 0.5px solid #e6e6e6;
+}

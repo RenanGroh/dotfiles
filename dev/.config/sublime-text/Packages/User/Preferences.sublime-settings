@@ -1,0 +1,33 @@
+{
+    // --- VISUAL ---
+    "theme": "Adaptive.sublime-theme",
+    "color_scheme": "Packages/User/GraphiteMono.sublime-color-scheme",
+    "fontTabs_face": "JetBrainsMono Nerd Font",
+    "font_size": 12,
+
+    // --- INTERFACE LIMPA ---
+    "overlay_scroll_bars": "enabled",
+    "menu_visible": false,
+    "show_minimap": false,
+    "side_bar_visible": false,
+    
+    // --- COMPORTAMENTO (Notepad) ---
+    "hot_exit": "Always",
+    "remember_open_files": true,
+    "close_windows_when_empty": false,
+
+    // --- MARGENS E CURSOR ---
+    "margin": 4,
+    "line_padding_bottom": 3,
+    "line_padding_top": 3,
+    "caret_style": "solid",
+    "caret_extra_width": 2,
+    
+    // --- EVITAR AVISOS CHATOS ---
+    "update_check": false,
+
+    // -- TABS -- 
+    "tab_size": 4,
+    "show_tab_close_buttons": false,
+
+}

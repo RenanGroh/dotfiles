@@ -1,0 +1,25 @@
+// =========================================================================
+// BARRA 2: MONITOR SECUNDÁRIO (HDMI-A-1) - MINIMALISTA
+// =========================================================================
+{
+    "output": "HDMI-A-1",
+    "include": ["~/.config/waybar/modules.jsonc"],
+
+    "layer": "top",
+    "position": "top",
+    "height": 34,
+    "spacing": 0,
+
+    "modules-left": [
+        "cpu",
+        "memory",
+	    "custom/gpu"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "pulseaudio",
+        "network"
+    ]
+}

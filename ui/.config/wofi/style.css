@@ -1,0 +1,52 @@
+/* --- Estrutura Geral (Janela) --- */
+window {
+    margin: 0px;
+    background-color: rgba(26, 26, 26, 0.6); /* Cinza Escuro (Graphite) */    
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 14px;
+}
+
+/* --- Caixa de Pesquisa --- */
+#input {
+    margin: 0px;
+    border: none;
+    border-radius: 0px;       /* Brutalista (sem cantos redondos) */
+    background-color: rgba(37, 37, 37, 0.6);
+    color: #e6e6e6;           /* Texto claro */
+    padding: 10px;
+}
+
+#inner-box {
+    margin: 5px;
+    border: none;
+    background-color: transparent;
+}
+
+/* --- Itens da Lista (Resultados) --- */
+#entry {
+    margin: 2px 0px;
+    border: none;
+    border-radius: 0px;
+    background-color: transparent;
+    padding: 10px;
+}
+
+/* --- Item Selecionado (Foco) --- */
+#entry:selected {
+    background-color: #e6e6e6; /* Inverte as cores para destaque máximo */
+    color: #1a1a1a;
+    font-weight: bold;
+    outline: none;
+}
+
+/* --- Ícones --- */
+#img {
+    margin-right: 10px;
+    background-color: transparent;
+}
+
+/* --- Rolagem (Scrollbar) --- */
+#scroll {
+    margin: 0px;
+    border: none;
+}
