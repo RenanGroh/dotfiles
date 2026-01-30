@@ -12,4 +12,4 @@ Configs pessoais para Arch Linux com Hyprland.
 ## Instalação
 1. Clone o repo:
    ```bash
-   git clone [https://github.com/SEU_USUARIO/dotfiles.git](https://github.com/SEU_USUARIO/dotfiles.git) ~/dotfiles
+   git clone [https://github.com/renangroh/dotfiles.git](https://github.com/renangroh/dotfiles.git) ~/dotfiles
