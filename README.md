@@ -14,3 +14,10 @@ Configs pessoais para Arch Linux com Hyprland.
 ```bash
 git clone https://github.com/renangroh/dotfiles.git ~/dotfiles
 ```
+
+2. Entre na pasta e instale:
+```bash
+cd ~/dotfiles
+chmod +x install.sh
+./install.sh
+```
