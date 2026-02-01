@@ -1,6 +1,7 @@
 # --- Configurações Globais (Sempre no Topo) ---
 add_newline = false
 scan_timeout = 1000
+command_timeout = 2000
 
 # Layout: Define a ordem exata das coisas
 # Estamos colocando: Usuário > Hostname > Pasta > Git > Linguagens > Seta
