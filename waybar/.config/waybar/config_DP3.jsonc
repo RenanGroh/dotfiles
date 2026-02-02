@@ -2,33 +2,46 @@
 // BARRA 1: MONITOR PRINCIPAL (DP-3) - COMPLETA
 // =========================================================================
 {
-    "output": "DP-3",
-    "include": ["~/.config/waybar/modules.jsonc"],
-    "layer": "top",
-    "position": "top",
-    "mod": "dock",
-    "exclusive": true,
-    "passthrough": false,
-    "gtk-layer-shell": true,
-    "height": 34,
-    "spacing": 0,
-
-    "modules-left": [
-        "hyprland/workspaces",
-        "cpu",
-        "memory",
-	    "custom/gpu",
-        "tray"
-    ],
-    "modules-center": [
-        "clock"
-    ],
-    "modules-right": [
-        "custom/cava",
-        "mpris",
-        "pulseaudio",
-        "custom/updates",
-        "network",
-        "custom/power"
+  "output": "DP-3",
+  "include": [
+    "~/.config/waybar/modules.jsonc"
+  ],
+  "layer": "top",
+  "position": "top",
+  "mod": "dock",
+  "exclusive": true,
+  "passthrough": false,
+  "gtk-layer-shell": true,
+  "height": 34,
+  "spacing": 0,
+  "modules-left": [
+    "hyprland/workspaces",
+    "cpu",
+    "memory",
+    "custom/gpu",
+    //"tray",
+    "group/sys-tray"
+    //"custom/discord-tray",
+    //"custom/gemini-tray"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/cava",
+    "mpris",
+    "pulseaudio",
+    "custom/updates",
+    "network",
+    "custom/power"
+  ],
+  // --- GRUPO DE BANDEJA UNIFICADA ---
+  "group/sys-tray": {
+    "orientation": "horizontal",
+    "modules": [
+      "tray", // O Tray oficial (Steam, Bluetooth)
+      "custom/discord-tray", // O Discord
+      "custom/gemini-tray" // Eu (Gemini)
     ]
+  }
 }

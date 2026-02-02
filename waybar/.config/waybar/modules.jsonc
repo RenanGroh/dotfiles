@@ -1,113 +1,133 @@
 {
-    // --- WORKSPACES ---
-    "hyprland/workspaces": {
-        "disable-scroll": true,
-        "all-outputs": true,
-        "on-click": "activate",
-        "format": "{icon}",
-        "persistent_workspaces": {
-            "1": [], "2": [], "3": [], "4": [], "5": []
-        }
-    },
-
-    // --- SYSTEM HARDWARE ---
-    "cpu": { 
-        "format": "CPU {usage}%", 
-        "tooltip": false, 
-        "interval": 2 
-    },
-    "memory": { 
-        "format": "MEM {}%" 
-    },
-    "custom/gpu": {
-        "exec": "~/.config/hypr/scripts/gpu_info.sh",
-        "format": "{}",  // O script já entrega a formatação completa
-        "interval": 2,
-        "tooltip": false,
-        "on-click": ""   // Opcional: Coloque algo como "missioncenter" se tiver
-    },
-    "tray": { 
-        "icon-size": 20,
-        "spacing": 10
-    },
-
-    // --- CLOCK & CALENDAR ---
-    "clock": {
-        "format": "{:%H:%M  %d/%m}",
-        "tooltip-format": "<tt><small>{calendar}</small></tt>",
-        "calendar": {
-            "mode": "year",
-            "mode-mon-col": 3,
-            "weeks-pos": "right",
-            "on-scroll": 1,
-            "format": {
-                "months": "<span color='#ffead3'><b>{}</b></span>",
-                "days": "<span color='#ecc6d9'><b>{}</b></span>",
-                "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
-                "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
-                "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
-            }
-        },
-        "actions": {
-            "on-click-right": "mode",
-            "on-click-forward": "tz_up",
-            "on-click-backward": "tz_down",
-            "on-scroll-up": "shift_up",
-            "on-scroll-down": "shift_down"
-        }
-    },
-
-    // --- AUDIO & MEDIA ---
-    "pulseaudio": {
-        "format": "{icon} {volume}%",
-        "format-muted": "󰖁 0%",
-        "on-click": "pavucontrol",
-        "scroll-step": 5,
-        "format-icons": {
-            "headphone": "", "hands-free": "", "headset": "",
-            "default": ["VOL", "VOL", "VOL"]
-        }
-    },
-    "custom/cava": {
-        "exec": "python3 ~/.config/waybar/cava_vol.py",
-        "format": "{}",
-        "return-type": "text",
-        "restart-interval": 1
-    },
-    "mpris": {
-        "format": "{player_icon} {title}",
-        "format-paused": "{status_icon} {title}",
-        "player-icons": {
-            "default": "▶",
-            "spotify": "",
-            "YouTube": ""
-        },
-        "status-icons": {
-            "paused": "⏸"
-        },
-        "max-length": 40,
-        "ellipsis": "" 
-    },
-
-    // --- NETWORK & SYSTEM ---
-    "network": {
-        "format-wifi": "WIFI {signalStrength}%",
-        "format-ethernet": "󰈀 Online",
-        "format-disconnected": " OFFLINE",
-        "tooltip-format": "{ifname} via {gwaddr}",
-        "on-click": "kitty -e nmtui"
-    },
-    "custom/updates": {
-        "format": " {}",
-        "interval": 3600,
-        "exec": "checkupdates | wc -l",
-        "exec-if": "exit 0",
-        "on-click": "kitty -e yay -Syu",
-        "signal": 8
-    },
-    "custom/power": {
-        "format": "PWR",
-        "tooltip": false,
-        "on-click": "wlogout --protocol layer-shell"
+  // --- WORKSPACES ---
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "on-click": "activate",
+    "format": "{icon}",
+    "persistent_workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": []
     }
+  },
+  // --- SYSTEM HARDWARE ---
+  "cpu": {
+    "format": "CPU {usage}%",
+    "tooltip": false,
+    "interval": 2
+  },
+  "memory": {
+    "format": "MEM {}%"
+  },
+  "custom/gpu": {
+    "exec": "~/.config/hypr/scripts/gpu_info.sh",
+    "format": "{}", // O script já entrega a formatação completa
+    "interval": 2,
+    "tooltip": false,
+    "on-click": "" // Opcional: Coloque algo como "missioncenter" se tiver
+  },
+  "tray": {
+    "icon-size": 20,
+    "spacing": 10
+  },
+  // --- CLOCK & CALENDAR ---
+  "clock": {
+    "format": "{:%H:%M  %d/%m}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "year",
+      "mode-mon-col": 3,
+      "weeks-pos": "right",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-right": "mode",
+      "on-click-forward": "tz_up",
+      "on-click-backward": "tz_down",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down"
+    }
+  },
+  // --- AUDIO & MEDIA ---
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰖁 0%",
+    "on-click": "pavucontrol",
+    "scroll-step": 5,
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "default": [
+        "VOL",
+        "VOL",
+        "VOL"
+      ]
+    }
+  },
+  "custom/cava": {
+    "exec": "python3 ~/.config/waybar/cava_vol.py",
+    "format": "{}",
+    "return-type": "text",
+    "restart-interval": 1
+  },
+  "mpris": {
+    "format": "{player_icon} {title}",
+    "format-paused": "{status_icon} {title}",
+    "player-icons": {
+      "default": "▶",
+      "spotify": "",
+      "YouTube": ""
+    },
+    "status-icons": {
+      "paused": "⏸"
+    },
+    "max-length": 40,
+    "ellipsis": ""
+  },
+  // --- NETWORK & SYSTEM ---
+  "network": {
+    "format-wifi": "WIFI {signalStrength}%",
+    "format-ethernet": "󰈀 Online",
+    "format-disconnected": " OFFLINE",
+    "tooltip-format": "{ifname} via {gwaddr}",
+    "on-click": "kitty -e nmtui"
+  },
+  "custom/updates": {
+    "format": " {}",
+    "interval": 3600,
+    "exec": "checkupdates | wc -l",
+    "exec-if": "exit 0",
+    "on-click": "kitty -e yay -Syu",
+    "signal": 8
+  },
+  "custom/power": {
+    "format": "PWR",
+    "tooltip": false,
+    "on-click": "wlogout --protocol layer-shell"
+  },
+  // --- CUSTOM TRAYS ---
+  "custom/discord-tray": {
+    "exec": "~/.config/waybar/scripts/check_discord.sh",
+    "interval": 2,
+    // REMOVA A LINHA "return-type": "json",
+    "format": "{}",
+    "on-click": "gtk-launch discord.desktop"
+  },
+  "custom/gemini-tray": {
+    "exec": "~/.config/waybar/scripts/check_gemini.sh",
+    "interval": 2,
+    "format": "{}",
+    "on-click": "gtk-launch gemini.desktop"
+  }
 }

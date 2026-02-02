@@ -1,7 +1,7 @@
 /* --- CONFIGURAÇÃO GLOBAL (Reset) --- */
 * {
     border: none;
-    border-radius: 1px; /* OBRIGATÓRIO: Garante o visual quadrado (Brutalismo) */
+    border-radius: 0px; 
     font-family: "JetBrainsMono Nerd Font", "Roboto Mono", monospace;
     font-weight: bold;
     font-size: 13px;
@@ -10,22 +10,21 @@
 
 /* --- A BARRA PRINCIPAL --- */
 window#waybar {
-    /* Mudei de 0.85 para 0.5 (ou até 0.3 se quiser muito efeito vidro) */
+    /* Fundo da barra inteira (pode diminuir o 0.5 para ficar mais transparente) */
     background: rgba(10, 10, 10, 0.5); 
     
-    /* Borda inferior sutil (mantive) */
-    border-bottom: 1px solid #303030;
+    /* linha inferior para delimitar a barra do resto da tela */
+    border-bottom: 0px solid #303030;
     
     color: #e6e6e6;
     transition-property: background-color;
     transition-duration: .5s;
 }
 
-/* Tooltips (Janelas flutuantes ao passar o mouse) */
+/* Tooltips */
 tooltip {
     background: #1a1a1a;
     border: 1px solid #404040;
-    border-radius: 0px; /* Quadrado */
 }
 tooltip label {
     color: #e6e6e6;
@@ -33,118 +32,140 @@ tooltip label {
 
 /* --- WORKSPACES (Área de Trabalho) --- */
 #workspaces {
-    background: #1a1a1a; /* Fundo Cinza Escuro */
+    background: transparent; /* SEM FUNDO */
     margin: 4px 4px;
     padding: 0px 2px;
-    border: 1px solid #303030; /* Borda sutil */
+    border: none; /* SEM BORDA */
 }
 
 #workspaces button {
     padding: 2 8px;
     background: transparent;
-    color: #707070; /* Cinza para inativos */
+    color: #707070;
     border-radius: 0px;
 }
 
-/* Workspace Ativo (Onde você está) */
+/* Workspace Ativo */
 #workspaces button.active {
-    background: #303030; /* Destaque sutil no fundo */
-    color: #ffffff;      /* Branco puro */
-    border-top: 0.5px solid #ffffff; /* Linha indicadora no topo */
+    background: transparent; /* Sem fundo no ativo também */
+    color: #ffffff;
+    /* Mantive apenas o traço no topo para você saber onde está */
+    border-top: 2px solid #ffffff; 
 }
 
 #workspaces button:hover {
-    background: #252525;
+    background: rgba(255, 255, 255, 0.1); /* Leve brilho ao passar o mouse */
     color: #e6e6e6;
 }
 
-/* Indicador de Urgência (Alguém te chamando) */
 #workspaces button.urgent {
-    background: #b53838; /* Um vermelho fosco, única cor de alerta */
-    color: #ffffff;
+    color: #b53838; /* Apenas muda a cor do texto para vermelho */
 }
 
 /* --- MÓDULOS (Blocos) --- */
-/* Estilo comum para todos os blocos da direita/esquerda */
+/* AQUI ESTÁ A MUDANÇA PRINCIPAL: "No-Box" Style */
 #clock,
 #battery,
 #cpu,
 #memory,
-#custom-gpu,       
+#custom-gpu,        
 #network,
 #pulseaudio,
-#tray,
 #mpris,
 #custom-updates,
 #custom-cava,
-#custom-power {
-    background: #1a1a1a; /* Cinza Escuro (Fundo dos módulos) */
-    color: #e6e6e6;      /* Branco Pastel (Texto) */
+#custom-power,
+#group-sys-tray
+{
+    background: transparent; /* Fundo transparente */
+    color: #e6e6e6;
     
-    /* Margem: Cria o espaçamento entre os blocos quadrados */
-    margin: 4px 2px;     
+    /* Margem para separar os textos */
+    margin: 4px 2px;      
     padding: 0 10px;
     
-    /* Borda sutil para definição (opcional, remove se quiser 'flat' total) */
-    border: 1px solid #252525; 
+    border: none; /* Removemos a borda */
 }
 
-/* --- Ajustes Específicos por Módulo --- */
+/* --- Ajustes Específicos --- */
 
-/* Relógio Central */
 #clock {
-    background: transparent; /* Relógio flutuante no meio */
-    border: none;
     font-size: 14px;
+    font-weight: 800; /* Um pouco mais grosso para destaque */
 }
 
-/* Botão Power (Destaque sutil) */
+/* Botão Power - Mantive com fundo para parecer um botão de perigo/ação */
+/* Se quiser ele sem fundo também, mude background para transparent */
 #custom-power {
-    background: #e6e6e6; /* Invertido: Fundo Branco */
-    color: #101010;      /* Texto Preto */
-    margin-right: 6px;   /* Espaço da borda da tela */
+    background: #e6e6e6; 
+    color: #101010;
+    margin-right: 6px;
+    padding: 0 8px;
+    border-radius: 2px;
 }
-
 #custom-power:hover {
     background: #ffffff;
 }
 
-/* Ícones de Tray */
+/* Ícones de Tray Oficial */
 #tray {
     padding-right: 8px;
     padding-left: 8px;
 }
 #tray > .passive {
-    -gtk-icon-effect: dim; /* Deixa ícones inativos mais escuros */
+    -gtk-icon-effect: dim;
 }
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
 }
 
 #custom-cava {
-    background: #1a1a1a;
-    color: #e6e6e6;      /* Roxo suave (ou use #e6e6e6 para branco) */
-    font-family: "JetBrainsMono Nerd Font";
-    padding-right: 5px; /* Espaço entre as barras e o nome da música */
-    margin-right: 5px;     /* Grudado no player */
-    font-weight: normal; /* Barras ficam melhores sem negrito */
+    padding-right: 5px;
+    margin-right: 5px;
+    color: #cba6f7; /* Um roxo suave para as barras de som */
+    font-weight: normal;
 }
 
-/* Player de Música */
 #mpris {
-    color: #a6e3a1;
-    margin-left: 0px;
-    padding-left: 5px;
+    color: #a6e3a1; /* Verde suave para música */
 }
 #mpris.paused {
-    color: #e6e6e6; /* Texto cinza quando pausado */
-    background: #151515;
-    font-style: normal;
+    color: #707070;
 }
 
-/* Updates (Só aparece se tiver update, pode destacar um pouco) */
 #custom-updates {
-    /* Se quiser manter monocromático, deixe igual aos outros.
-       Se quiser um aviso sutil, descomente abaixo: */
-       border-bottom: 0.5px solid #e6e6e6;
+    color: #fab387; /* Laranja suave para updates */
 }
+
+/* Trays Customizados (Discord/Gemini) */
+#custom-discord-tray {
+    font-family: "JetBrainsMono Nerd Font"; 
+    font-size: 16px;
+    color: #e6e6e6; /* Mantive a cor do ícone */
+    padding-right: 12px;
+}
+
+#custom-gemini-tray {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 16px;
+    color: #e6e6e6;
+    padding-right: 12px;
+}
+
+/* --- GRUPO UNIFICADO (Agora totalmente invisível) --- */
+#group-sys-tray {
+    background: transparent;
+    border: none;
+    margin: 4px 2px;
+    padding: 0;
+}
+
+/* Garante que os itens dentro não ganhem borda magicamente */
+#group-sys-tray > * {
+    background: transparent;
+    border: none;
+    margin: 0;
+    box-shadow: none;
+}
+
+
