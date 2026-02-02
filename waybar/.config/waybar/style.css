@@ -63,12 +63,11 @@ tooltip label {
 }
 
 /* --- MÓDULOS (Blocos) --- */
-/* AQUI ESTÁ A MUDANÇA PRINCIPAL: "No-Box" Style */
 #clock,
 #battery,
 #cpu,
 #memory,
-#custom-gpu,        
+#custom-gpu,
 #network,
 #pulseaudio,
 #mpris,
@@ -94,8 +93,8 @@ tooltip label {
     font-weight: 800; /* Um pouco mais grosso para destaque */
 }
 
-/* Botão Power - Mantive com fundo para parecer um botão de perigo/ação */
-/* Se quiser ele sem fundo também, mude background para transparent */
+/* Botão Power */
+
 #custom-power {
     background: #e6e6e6; 
     color: #101010;
@@ -120,10 +119,13 @@ tooltip label {
 }
 
 #custom-cava {
-    padding-right: 5px;
-    margin-right: 5px;
-    color: #cba6f7; /* Um roxo suave para as barras de som */
-    font-weight: normal;
+
+    color: #e6e6e6; 
+    font-family: "JetBrainsMono Nerd Font";
+    padding-right: 5px; /* Espaço entre as barras e o nome da música */
+    margin-right: 5px;     /* Grudado no player */
+    font-weight: normal; /* Barras ficam melhores sem negrito */
+
 }
 
 #mpris {
@@ -142,7 +144,8 @@ tooltip label {
     font-family: "JetBrainsMono Nerd Font"; 
     font-size: 16px;
     color: #e6e6e6; /* Mantive a cor do ícone */
-    padding-right: 12px;
+    padding-left: 2px;
+    padding-right: 18px;
 }
 
 #custom-gemini-tray {
@@ -152,7 +155,7 @@ tooltip label {
     padding-right: 12px;
 }
 
-/* --- GRUPO UNIFICADO (Agora totalmente invisível) --- */
+/* --- GRUPO UNIFICADO --- */
 #group-sys-tray {
     background: transparent;
     border: none;
@@ -160,7 +163,7 @@ tooltip label {
     padding: 0;
 }
 
-/* Garante que os itens dentro não ganhem borda magicamente */
+/* Garante que os itens dentro não ganhem borda */
 #group-sys-tray > * {
     background: transparent;
     border: none;
