@@ -119,24 +119,35 @@ tooltip label {
 }
 
 #custom-cava {
-
     color: #e6e6e6; 
     font-family: "JetBrainsMono Nerd Font";
     padding-right: 5px; /* Espaço entre as barras e o nome da música */
     margin-right: 5px;     /* Grudado no player */
     font-weight: normal; /* Barras ficam melhores sem negrito */
-
 }
 
 #mpris {
+    font-size: 14px;
     color: #a6e3a1; /* Verde suave para música */
 }
 #mpris.paused {
-    color: #707070;
+    font-family: "JetBrainsMono Nerd Font";
+    color: #e6e6e6;
+}
+
+#pulseaudio {
+  font-size: 14px;
+  color: #e6e6e6;
+}
+
+#network {
+  font-size: 14px;
+  color: #e6e6e6;
 }
 
 #custom-updates {
-    color: #fab387; /* Laranja suave para updates */
+  color: #e6e6e6; /* fab387 Laranja Vesper */
+  font-size: 14px;
 }
 
 /* Trays Customizados (Discord/Gemini) */
@@ -152,7 +163,14 @@ tooltip label {
     font-family: "JetBrainsMono Nerd Font";
     font-size: 16px;
     color: #e6e6e6;
-    padding-right: 12px;
+    padding-right: 16px;
+}
+
+#custom-spotify-tray {
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 16px;
+    color: #e6e6e6;
+    padding-right: 16px;
 }
 
 /* --- GRUPO UNIFICADO --- */

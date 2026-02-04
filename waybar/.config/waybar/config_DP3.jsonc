@@ -19,6 +19,7 @@
     "cpu",
     "memory",
     "custom/gpu",
+    "custom/mouse",
     //"tray",
     "group/sys-tray"
     //"custom/discord-tray",
@@ -40,8 +41,9 @@
     "orientation": "horizontal",
     "modules": [
       "tray", // O Tray oficial (Steam, Bluetooth)
-      "custom/discord-tray", // O Discord
-      "custom/gemini-tray" // Eu (Gemini)
+      "custom/discord-tray", // Discord
+      "custom/gemini-tray", // Gemini
+      "custom/spotify-tray"
     ]
   }
 }

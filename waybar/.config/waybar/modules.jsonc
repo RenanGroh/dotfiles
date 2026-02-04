@@ -26,8 +26,8 @@
     "exec": "~/.config/hypr/scripts/gpu_info.sh",
     "format": "{}", // O script já entrega a formatação completa
     "interval": 2,
-    "tooltip": false,
-    "on-click": "" // Opcional: Coloque algo como "missioncenter" se tiver
+    "tooltip": false
+    //"on-click": "" // Opcional: Coloque algo como "missioncenter" se tiver
   },
   "tray": {
     "icon-size": 20,
@@ -86,11 +86,11 @@
     "format-paused": "{status_icon} {title}",
     "player-icons": {
       "default": "▶",
-      "spotify": "",
-      "YouTube": ""
+      "spotify": " ",
+      "youtube": " "
     },
     "status-icons": {
-      "paused": "⏸"
+      "paused": "󰏤"
     },
     "max-length": 40,
     "ellipsis": ""
@@ -116,6 +116,14 @@
     "tooltip": false,
     "on-click": "wlogout --protocol layer-shell"
   },
+  // Mouse Battery not working
+  //"custom/mouse": {
+  //  "exec": "~/.config/waybar/scripts/vxe_battery.py",
+  //  "return-type": "json",
+  //  "interval": 900, // Atualiza a cada 5 minutos (economiza bateria do mouse)
+  //  "format": "{}",
+  //  "on-click": "~/.config/waybar/scripts/vxe_battery.py"
+  //},
   // --- CUSTOM TRAYS ---
   "custom/discord-tray": {
     "exec": "~/.config/waybar/scripts/check_discord.sh",
@@ -129,6 +137,13 @@
     "interval": 2,
     "format": "{}",
     "on-click": "hyprctl dispatch togglespecialworkspace gemini",
+    "tooltip": false
+  },
+  "custom/spotify-tray": {
+    "exec": "~/.config/waybar/scripts/check_spotify.sh",
+    "interval": 2,
+    "format": "{}",
+    "on-click": "hyprctl dispatch togglespecialworkspace music",
     "tooltip": false
   }
 }
